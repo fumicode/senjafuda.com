@@ -1,0 +1,29 @@
+{
+  "name": "senjafuda",
+  "version": "1.0.0",
+  "description": "senjafuda theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjonasw/wordpress-starter-theme-jade-php.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cjonasw/wordpress-starter-theme-jade-php/issues"
+  },
+  "homepage": "https://github.com/cjonasw/wordpress-starter-theme-jade-php#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jade-php": "^2.0.0-0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-riot": "^1.1.0",
+    "gulp-sass": "^3.1.0",
+    "node-bourbon": "^4.2.8",
+    "node-neat": "^2.0.0-beta.0"
+  }
+}

@@ -1,12 +1,29 @@
-html
-  head
-    title #{title}
-body
-  div
-    :php
-      echo "waa";
-      echo "aaa";var_dump();
-      var_dump();
-      var_dump();
-    - echo "aa";
-  div.aho
+extends layouts/basic-layout
+
+block content
+  div.contentBox
+  
+    div.greenBox title
+    
+    div.greenBox__bution
+      button(type="button")
+        
+    div.greenBox__first
+      h1 千社札ストラップ ・ シール専門店
+      p wawawa
+    div.greenBox__second
+      h2 千社札とは？
+      p wasawasa
+    
+  div.blueBox
+    h2 当店の人気商品
+    div.blueBox__first
+      h3 千社札ストラップ
+    div.blueBox__second
+      h3 千社札シール 
+    div.blueBox__third
+      h3 京ちりめんストラップ
+    div.blueBox__forth
+      h3 千社札名刺
+      
+  

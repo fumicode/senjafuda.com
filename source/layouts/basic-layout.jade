@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title= title
+    :php
+      wp_enqueue_style('style', get_stylesheet_uri(), array(), '1.0（バージョンを記載）' );
+      wp_head();
+    meta(name="viewport", content="width=device-width,initial-scale=1")
+  body
+    div.page
+      div.page__header
+        include ../includes/head
+      div.page__content
+        div.page__main
+          block content
+        div.page__sidebar
+          include ../includes/sidebar
+
+      div.page__footer
+        include ../includes/foot

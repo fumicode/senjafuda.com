@@ -24,6 +24,10 @@
     "gulp-riot": "^1.1.0",
     "gulp-sass": "^3.1.0",
     "node-bourbon": "^4.2.8",
-    "node-neat": "^2.0.0-beta.0"
+    "node-neat": "^1.7.2"
+  },
+  "dependencies": {
+    "normalize-scss": "^6.0.0",
+    "normalize.css": "^6.0.0"
   }
 }

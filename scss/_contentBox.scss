@@ -1,0 +1,14 @@
+.defaultBorder {
+    border:1px solid #000;
+}
+
+.contentBox {
+    height:150px;
+    background:#fff;
+    @extend .defaultBorder
+}
+
+.contentBox--botMargin {
+    @extend .contentBox;
+    margin-bottom:20px;
+}

@@ -2,28 +2,44 @@ extends layouts/basic-layout
 
 block content
   div.contentBox
-  
-    div.greenBox title
-    
-    div.greenBox__bution
-      button(type="button")
-        
-    div.greenBox__first
-      h1 千社札ストラップ ・ シール専門店
-      p wawawa
-    div.greenBox__second
-      h2 千社札とは？
-      p wasawasa
-    
-  div.blueBox
-    h2 当店の人気商品
-    div.blueBox__first
+    div 画像
+  div.contentBox--botMargin
+    div 画像
+
+  div.cardLists--blue
+    div.cardLists__title
+      div 当店の人気商品
+    div.cardLists__card
       h3 千社札ストラップ
-    div.blueBox__second
+    div.cardLists__card
       h3 千社札シール 
-    div.blueBox__third
+    div.cardLists__card
       h3 京ちりめんストラップ
-    div.blueBox__forth
+    div.cardLists__card
       h3 千社札名刺
+
+  div.cardLists--red
+    div.cardLists__title
+      div ご購入事例の紹介
+    div.cardLists__card
+      div.card
+        h3 千社札ストラップ
+    div.cardLists__card
+      h3 千社札シール 
+    div.cardLists__card
+      h3 京ちりめんストラップ
+    div.cardLists__card
+      h3 千社札名刺
+
+  div.newsLists
+    div.newsLists__title
+      div 新着情報・メディア掲載
+    div.newsLists__newsBox 記事
+    div.newsLists__newsBox 記事
+    div.newsLists__newsBox
+    div.newsLists__newsBox
+    div.newsLists__newsBox    
       
+  div.contentBox--botMargin
+    div 画像
   

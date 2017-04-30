@@ -13,6 +13,20 @@
 }
 
 .newsLists__newsBox {
-    height:100px;
+    padding:20px;
     @extend .newsLists-border;
+    
+}
+
+
+.newsBox {
+    @include outer-container(100%);
+}
+
+.newsBox__img{
+    @include span-columns(1 of 5);
+}
+
+.newsBox__title {
+    @include span-columns(4 of 5);
 }

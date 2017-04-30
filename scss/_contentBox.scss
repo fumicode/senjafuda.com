@@ -3,12 +3,51 @@
 }
 
 .contentBox {
-    height:150px;
+    @include outer-container(100%);
     background:#fff;
     @extend .defaultBorder
+}
+
+.contentBox__title {
+    padding:10px;
 }
 
 .contentBox--botMargin {
     @extend .contentBox;
     margin-bottom:20px;
+}
+
+.contentBox--botMargin {
+    padding:10px;
+}
+
+.contentBox--botMargin__image {
+    @include span-columns(2 of 5);
+}
+
+.contentBox--botMargin__desc {
+    @include span-columns(3 of 5);
+}
+
+.contentBox--botMargin__images .images{
+    @include outer-container(100%);
+}
+
+.contentBox--botMargin__images .image {
+    @include span-columns(2 of 4);
+
+}
+
+.contentBox--botMargin__button {
+    background: blue;
+    margin: 10px 20px;
+    text-align:center;
+    padding:10px 5px;
+    border-radius:5px;
+}
+
+.contentBox--botMargin__button a {
+    color:#fff;
+    text-decoration:none;
+    font-size:20px;
 }

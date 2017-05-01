@@ -9,12 +9,12 @@
 
 @import "newsLists.scss";
 body {
-
+    background: #adae7d;
 }
 
 .page {
-    background: #556B2F;
     padding-bottom: 10px;
+    @include outer-container;
 }
 
 /* head */
@@ -28,7 +28,7 @@ body {
 }
 
 .topHeader__go2English {
-    background: blue;
+    background: #475689;
     margin: 10px 20px;
     text-align:center;
     padding:10px 5px;

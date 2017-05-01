@@ -415,7 +415,7 @@ th {
     margin-right: 0; }
 
 .contentBox--botMargin__button {
-  background: blue;
+  background: #475689;
   margin: 10px 20px;
   text-align: center;
   padding: 10px 5px;
@@ -431,7 +431,7 @@ th {
   margin-bottom: 20px; }
 
 .cardLists__title {
-  background: rgba(85, 107, 47, 0.4);
+  background: rgba(255, 255, 255, 0.7);
   border-top: 4px solid #000;
   border-bottom: 4px solid #000;
   font-size: 20px; }
@@ -442,10 +442,10 @@ th {
   margin: 10px 5px; }
 
 .cardLists--blue {
-  background: RoyalBlue; }
+  background: #6874a6; }
 
 .cardLists--red {
-  background: red; }
+  background: #ae7d7d; }
 
 .card {
   padding: 5px;
@@ -535,9 +535,18 @@ th {
   .newsBox__title:last-child {
     margin-right: 0; }
 
+body {
+  background: #adae7d; }
+
 .page {
-  background: #556B2F;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .page::after {
+    clear: both;
+    content: "";
+    display: table; }
 
 /* head */
 .topHeader__siteTitleBorder {
@@ -548,7 +557,7 @@ th {
   font-size: 30px; }
 
 .topHeader__go2English {
-  background: blue;
+  background: #475689;
   margin: 10px 20px;
   text-align: center;
   padding: 10px 5px;

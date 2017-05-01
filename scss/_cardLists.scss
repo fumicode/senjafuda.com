@@ -4,7 +4,7 @@
 }
 
 .cardLists__title {
-    background:rgba(85,107,47,0.4);
+    background:rgba(255,255,255,0.7);
     border-top:4px solid #000;
     border-bottom:4px solid #000;
     font-size:20px;
@@ -22,12 +22,12 @@
 }
 
 .cardLists--blue {
-    background: RoyalBlue;
+    background: #6874a6;
     @extend .cardLists;
 }
 
 .cardLists--red {
-    background: red;
+    background: #ae7d7d;
     @extend .cardLists;
 }
 

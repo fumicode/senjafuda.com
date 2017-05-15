@@ -28,8 +28,9 @@ body {
 }
 
 .topHeader__go2English {
+    max-width:400px;
     background: #475689;
-    margin: 10px 20px;
+    margin: 10px auto;
     text-align:center;
     padding:10px 5px;
     border-radius:5px;
@@ -39,4 +40,12 @@ body {
     color:#fff;
     text-decoration:none;
     font-size:20px;
+}
+
+.h2-normal-title {
+
+}
+
+.homeHeaderImg img{
+    max-width:100%;
 }

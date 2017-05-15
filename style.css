@@ -363,37 +363,37 @@ th {
   border: 1px solid #000; }
 
 .contentBox, .contentBox--botMargin {
+  background: #fff; }
+
+.contentBox--botMargin {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  background: #fff; }
-  .contentBox::after, .contentBox--botMargin::after {
+  margin-bottom: 20px; }
+  .contentBox--botMargin::after {
     clear: both;
     content: "";
     display: table; }
 
-.contentBox__title {
-  padding: 10px; }
-
 .contentBox--botMargin {
-  margin-bottom: 20px; }
-
-.contentBox--botMargin {
-  padding: 10px; }
+  padding: 5px; }
 
 .contentBox--botMargin__image {
   float: left;
   display: block;
-  margin-right: 5.85151%;
-  width: 36.4891%; }
+  margin-right: 2.35765%;
+  width: 48.82117%; }
   .contentBox--botMargin__image:last-child {
     margin-right: 0; }
+
+.contentBox--botMargin__image img {
+  max-width: 100%; }
 
 .contentBox--botMargin__desc {
   float: left;
   display: block;
-  margin-right: 5.85151%;
-  width: 57.6594%; }
+  margin-right: 2.35765%;
+  width: 48.82117%; }
   .contentBox--botMargin__desc:last-child {
     margin-right: 0; }
 
@@ -409,10 +409,13 @@ th {
 .contentBox--botMargin__images .image {
   float: left;
   display: block;
-  margin-right: 7.42297%;
-  width: 46.28851%; }
+  margin-right: 2.35765%;
+  width: 48.82117%; }
   .contentBox--botMargin__images .image:last-child {
     margin-right: 0; }
+
+.image img {
+  max-width: 100%; }
 
 .contentBox--botMargin__button {
   background: #475689;
@@ -457,6 +460,9 @@ th {
     content: "";
     display: table; }
 
+.card__title {
+  text-align: center; }
+
 .card__wrap {
   max-width: 100%;
   margin-left: auto;
@@ -469,32 +475,35 @@ th {
 .card__img {
   float: left;
   display: block;
-  margin-right: 7.42297%;
-  width: 46.28851%; }
+  margin-right: 1.16509%;
+  width: 49.41745%; }
   .card__img:last-child {
     margin-right: 0; }
+
+.card__img img {
+  max-width: 100%; }
 
 .card__desc {
   float: left;
   display: block;
-  margin-right: 7.42297%;
-  width: 46.28851%; }
+  margin-right: 1.16509%;
+  width: 49.41745%; }
   .card__desc:last-child {
     margin-right: 0; }
 
 .card__price {
-  float: left;
-  display: block;
-  margin-right: 2.84259%;
-  width: 38.29445%;
   color: red;
   font-size: 20px;
-  margin-left: 30.85278%; }
-  .card__price:last-child {
-    margin-right: 0; }
+  text-align: center; }
 
 .card__showMoreDetail {
-  @incldue span-columns(3 of 10); }
+  text-align: right;
+  margin-top: -25px;
+  padding-bottom: 10px; }
+
+.card__showMoreDetail a {
+  text-decoration: none;
+  color: #000; }
 
 .newsLists {
   background: #fff;
@@ -557,8 +566,9 @@ body {
   font-size: 30px; }
 
 .topHeader__go2English {
+  max-width: 400px;
   background: #475689;
-  margin: 10px 20px;
+  margin: 10px auto;
   text-align: center;
   padding: 10px 5px;
   border-radius: 5px; }
@@ -567,3 +577,6 @@ body {
   color: #fff;
   text-decoration: none;
   font-size: 20px; }
+
+.homeHeaderImg img {
+  max-width: 100%; }

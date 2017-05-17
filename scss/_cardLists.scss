@@ -36,24 +36,38 @@
     @include outer-container(100%);
 }
 
+.card__title {
+    text-align:center;
+}
+
 .card__wrap {
     @include outer-container(100%);
 }
 .card__img {
-    @include span-columns(2 of 4);
+    @include span-columns(12 of 24);
+}
+
+.card__img img {
+    max-width:100%;
 }
 
 .card__desc {
-    @include span-columns(2 of 4);
+    @include span-columns(12 of 24);
 }
 
 .card__price {
-    @include span-columns(4 of 10);
     color: red;
     font-size: 20px;
-    @include shift(3);
+    text-align:center;
 }
 
 .card__showMoreDetail {
-    @incldue span-columns(3 of 10);
+    text-align:right;
+    margin-top:-25px;
+    padding-bottom:10px;
+}
+
+.card__showMoreDetail a {
+    text-decoration:none;
+    color:#000;
 }

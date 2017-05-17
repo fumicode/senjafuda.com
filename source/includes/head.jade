@@ -1,10 +1,23 @@
-div.page__topHeader
-  div.topHeader
+div.topHeader
 
-    div.topHeader__siteTitleBorder
-      div.siteTitleBorder__siteTitle 千社札.com
+  div.topHeader__siteTitleBorder
+    div.siteTitleBorder__siteTitle 千社札.com
 
-    div.topHeader__go2English
-      div.go2English
-        a(href="#") Go to English page
+  div.topHeader__otherLang
+
+
+    ul.otherLangs
+      li.otherLangs__item
+        a.otherLangs__link(href="/en")
+          img.otherLangs__image(src="<?= get_stylesheet_directory_uri()?>/images/lang_button_en.jpg")
+
+      li.otherLangs__item
+        a.otherLangs__link(href="/en")
+          img.otherLangs__image(src="<?= get_stylesheet_directory_uri()?>/images/lang_button_ch.jpg")
+
+      li.otherLangs__item
+        a.otherLangs__link(href="/en")
+          img.otherLangs__image(src="<?= get_stylesheet_directory_uri()?>/images/lang_button_ko.jpg")
+
+
       

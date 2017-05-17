@@ -1,51 +1,25 @@
+@import "normalize.scss";
+
 @import "bourbon";
 @import "neat";
 
-@import "normalize.scss";
+
+@import "body";
+
+@import "page";
+@import "siteTitleBorder";
+@import "topHeader";
+
 
 @import "contentBox.scss";
 
 @import "cardLists.scss";
 
 @import "newsLists.scss";
-body {
-    background: #adae7d;
-}
 
-.page {
-    padding-bottom: 10px;
-    @include outer-container;
-}
 
-/* head */
-.topHeader__siteTitleBorder {
-    border-bottom:6px solid #000;
-}
 
-.siteTitleBorder__siteTitle {
-    border:3px solid #fff;
-    font-size:30px;
-}
 
-.topHeader__go2English {
-    max-width:400px;
-    background: #475689;
-    margin: 10px auto;
-    text-align:center;
-    padding:10px 5px;
-    border-radius:5px;
-}
 
-.topHeader__go2English a {
-    color:#fff;
-    text-decoration:none;
-    font-size:20px;
-}
 
-.h2-normal-title {
 
-}
-
-.homeHeaderImg img{
-    max-width:100%;
-}

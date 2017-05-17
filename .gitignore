@@ -1,6 +1,14 @@
 node_modules
 .DS_Store
+
+
+style.css
+
 *~
 *#
+
 *.php
 !functions.php
+
+*.swp
+*.swo

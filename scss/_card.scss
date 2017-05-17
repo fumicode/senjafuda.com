@@ -1,0 +1,41 @@
+.card {
+    padding: 5px;
+    @include outer-container(100%);
+
+}
+
+.card__title {
+    text-align:center;
+}
+
+.card__wrap {
+    @include outer-container(100%);
+}
+.card__img {
+    @include span-columns(12 of 24);
+}
+
+.card__img img {
+    max-width:100%;
+}
+
+.card__desc {
+    @include span-columns(12 of 24);
+}
+
+.card__price {
+    color: red;
+    font-size: 20px;
+    text-align:center;
+}
+
+.card__showMoreDetail {
+    text-align:right;
+    margin-top:-25px;
+    padding-bottom:10px;
+}
+
+.card__showMoreDetail a {
+    text-decoration:none;
+    color:#000;
+}

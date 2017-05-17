@@ -1,6 +1,3 @@
-.defaultBorder {
-    border:1px solid #000;
-}
 
 .contentBox {
     background:#fff;
@@ -37,9 +34,6 @@
     @include span-columns(6 of 12);
 }
 
-.image img {
-    max-width:100%;
-}
 
 .contentBox--botMargin__button {
     background: #475689;

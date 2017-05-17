@@ -1,0 +1,88 @@
+extends layouts/basic-layout
+
+block content
+  .homeHeaderImg
+      img(src="https://placehold.jp/500x300.png")
+  div.contentBox--botMargin
+    h2.contentBox--botMargin__title 千社札とは？
+    div.contentBox--botMargin__image
+      img(src="https://placehold.jp/400x300.png")    
+    div.contentBox--botMargin__desc 千社札と書いて「せんじゃふだ(せんしゃふだ)」と読みます。世の中の安泰と家内安全を願う千社参りの札を、略して千社札というようになったとされています。当店ではこの千社札をシール・ストラップ・名刺にして、銀座歌舞伎座の向かいで販売しています。
+
+  div.cardLists--blue
+    :php
+      $parent_id = get_page_by_title('人気商品')->ID;   
+      $args = array( 
+        'post_type' => 'page',
+        'post_parent' => $parent_id,
+              );
+
+      $the_query = new WP_Query( $args );
+    div.cardLists__title
+      div 当店の人気商品
+
+    - while($the_query->have_posts()) : $the_query->the_post()
+
+    div.cardLists__card
+      div.card
+        h3.card__title
+          a(href="<?= get_the_permalink(); ?>") <?= the_title(); ?>
+        div.card__wrap
+          div.card__desc <?= the_content(); ?>
+          div.card__img
+            img(src="https://placehold.jp/400x300.png")
+        div.card__price  <?= get_post_meta(get_the_ID(), 'price', true); ?>
+        div.card__showMoreDetail
+          a(href="") 詳しく見る>>
+    
+    - endwhile;
+    
+  div.cardLists--red
+    :php
+      $parent_id = get_page_by_title('購入事例')->ID;   
+      $args = array( 
+        'post_type' => 'page',
+        'post_parent' => $parent_id,
+              );
+
+      $the_query = new WP_Query( $args );  
+    div.cardLists__title
+      div ご購入事例の紹介
+    - while($the_query->have_posts()) : $the_query->the_post()
+    div.cardLists__card
+      div.card
+        h3.card__title <?= the_title(); ?>
+        div.card__wrap
+          div.card__desc <?= the_content(); ?>
+          div.card__img
+            img(src="https://placehold.jp/400x300.png")
+        
+    - endwhile;
+
+  div.newsLists
+    div.newsLists__title
+      div 新着情報・メディア掲載
+    - while(have_posts()): the_post()
+    div.newsLists__newsBox
+      div.newsBox
+        div.newsBox__img
+          img(src="https://placehold.jp/50x120.png")
+        div.newsBox__title <?= the_title(); ?>
+    - endwhile;
+    
+  div.contentBox--botMargin
+    h2.contentBox--botMargin__title 毎日更新！FaceBookやってます！
+    div.contentBox--botMargin__images
+      div.images
+        div.image
+          img(src="https://placehold.jp/500x300.png")
+        div.image
+          img(src="https://placehold.jp/500x300.png")
+    p.contentBox--botMargin__desc--full Facebookに、お店に来てくださった外国人のお客様の写真をアッ プしております。
+    div.contentBox--botMargin__button
+      a(href="") Facebook/senjafuda
+    
+
+      
+
+  

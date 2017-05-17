@@ -359,6 +359,9 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
+body {
+  background: url(./images/body_bg.gif); }
+
 .page {
   padding-bottom: 10px;
   max-width: 68em;

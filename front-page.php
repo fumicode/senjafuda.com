@@ -5,7 +5,7 @@ $args = array(
   'post_parent' => $parent_id,
         );
 
-$the_query = new WP_Query( $args );?><div class="cardLists__title"><div>当店の人気商品</div></div><?php while($the_query->have_posts()) : $the_query->the_post(); ?><div class="cardLists__card"><div class="card"><h3 class="card__title"><?= the_title(); ?></h3><div class="card__wrap"><div class="card__desc"><?= the_content(); ?></div><div class="card__img"><img src="https://placehold.jp/400x300.png"></div></div><div class="card__price"> <?= get_post_meta(get_the_ID(), 'price', true); ?></div><div class="card__showMoreDetail"><a href="">詳しく見る>></a></div></div></div><?php endwhile; ?></div><div class="cardLists--red"><?php $parent_id = get_page_by_title('購入事例')->ID;   
+$the_query = new WP_Query( $args );?><div class="cardLists__title"><div>当店の人気商品</div></div><?php while($the_query->have_posts()) : $the_query->the_post(); ?><div class="cardLists__card"><div class="card"><h3 class="card__title"><a href="<?= get_the_permalink(); ?>"><?= the_title(); ?></a></h3><div class="card__wrap"><div class="card__desc"><?= the_content(); ?></div><div class="card__img"><img src="https://placehold.jp/400x300.png"></div></div><div class="card__price"> <?= get_post_meta(get_the_ID(), 'price', true); ?></div><div class="card__showMoreDetail"><a href="">詳しく見る>></a></div></div></div><?php endwhile; ?></div><div class="cardLists--red"><?php $parent_id = get_page_by_title('購入事例')->ID;   
 $args = array( 
   'post_type' => 'page',
   'post_parent' => $parent_id,

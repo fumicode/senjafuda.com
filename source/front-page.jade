@@ -25,7 +25,8 @@ block content
 
     div.cardLists__card
       div.card
-        h3.card__title <?= the_title(); ?>
+        h3.card__title
+          a(href="<?= get_the_permalink(); ?>") <?= the_title(); ?>
         div.card__wrap
           div.card__desc <?= the_content(); ?>
           div.card__img

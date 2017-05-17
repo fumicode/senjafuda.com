@@ -1,9 +1,0 @@
-<!DOCTYPE html><html><head><title><?php echo htmlspecialchars(千社札.com, ENT_QUOTES, 'UTF-8'); ?></title><?php wp_enqueue_style('style', get_stylesheet_uri(), array(), time() );
-wp_head();?><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><div class="page"><div class="page__header"><div class="page__topHeader"><div class="topHeader"><div class="topHeader__siteTitleBorder"><div class="siteTitleBorder__siteTitle">千社札.com</div></div><div class="topHeader__go2English"><div class="go2English"><a href="#">Go to English page</a></div></div></div></div></div><div class="page__content"><div class="page__main"><div class="cardLists--blue"><?php $parent_id = get_page_by_title('人気商品')->ID;   
-$args = array( 
-  'post_type' => 'page',
-  'post_parent' => $parent_id,
-        );
-
-$the_query = new WP_Query( $args );
-?></div><div class="newsLists"><div class="newsLists__title"><div>新着情報・メディア掲載</div></div><?php while(have_posts()): the_post(); ?><div><div><div><?= the_title(); ?></div><div><?= the_content(); ?></div></div></div><?php endwhile; ?></div><div class="contentBox--botMargin"><h2 class="contentBox--botMargin__title">毎日更新！FaceBookやってます！</h2><div class="contentBox--botMargin__images"><div class="images"><div class="image"><img src="https://placehold.jp/500x300.png"></div><div class="image"><img src="https://placehold.jp/500x300.png"></div></div></div><p class="contentBox--botMargin__desc--full">Facebookに、お店に来てくださった外国人のお客様の写真をアッ プしております。</p><div class="contentBox--botMargin__button"><a href="">Facebook/senjafuda</a></div></div></div><div class="page__sidebar"></div></div><div class="page__footer"></div></div></body></html>

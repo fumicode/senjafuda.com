@@ -1,1 +1,0 @@
-<div class="page__topHeader"><div class="topHeader"><div class="topHeader__siteTitleBorder"><div class="siteTitleBorder__siteTitle">千社札.com</div></div><div class="topHeader__go2English"><div class="go2English"><a href="#">Go to English page</a></div></div></div></div>

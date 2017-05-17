@@ -18,8 +18,10 @@ gulp.task("scss", function(){
     }))
 
     .pipe(sass({
-      includePaths: neat.includePaths
+      includePaths: neat.includePaths,
+      sourceComments:true
     }).on('error', sass.logError)) 
+    .pipe(sourcemaps.write("./"))
     .pipe(gulp.dest("./"));
 
 });
@@ -43,13 +45,11 @@ gulp.task('watch',function () {
 });
 
 gulp.task('templates', function() {
-  gulp.src('./source/**/*.jade')
+  gulp.src('./source/*.jade')
     .pipe(jade({
-        locals: {
-          title: 'OMG THIS IS THE TITLE'
-        }
-     }))
-     .pipe(gulp.dest('./'));
+      pretty:true
+    }))
+    .pipe(gulp.dest('./'));
 });
 
 gulp.task('default', ['scss', 'riot', 'watch', 'templates']);

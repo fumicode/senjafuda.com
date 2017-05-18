@@ -1,0 +1,62 @@
+.topbar{
+  border:4px solid #000;
+  background:#fff;
+  padding:2px;
+
+}
+
+.topbar__inner{
+  box-sizing:content-box;
+  border:2px solid #000;
+  background:yellow;
+  padding:2px;
+
+  height: $topbar-content-height;
+  @include clearfix;
+
+  @include grid-container;
+}
+
+
+.topbar__siteTitle {
+  
+  background:red;
+  height:$topbar-content-height;
+  float:left;
+
+  @include grid-column(6, $grid-setting-nogutter);
+}
+  .topbar__siteLogo{
+    max-height:$topbar-content-height;
+  }
+
+
+.topbar__otherLangs{
+
+  display:none;
+
+  @include grid-media($grid-setting-large){
+    display:block;
+
+    @include grid-column(4, $grid-setting-nogutter);
+    
+  }
+
+}
+
+.topbar__menuButton{
+  float:right;
+  max-height:$topbar-content-height;
+
+
+  text-align:right;
+
+  @include grid-column(6, $grid-setting-nogutter);
+
+
+  @include grid-media($grid-setting-large){
+    @include grid-column(2, $grid-setting-nogutter);
+  }
+}
+
+

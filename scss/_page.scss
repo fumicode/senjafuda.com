@@ -1,7 +1,11 @@
 
 .page {
-    padding-bottom: 10px;
-    @include outer-container;
+
+  max-width:1200px;
+  margin:0 auto;
+  padding-bottom: 10px;
+  overflow:hidden;
+  @include grid-container();
 }
 
 

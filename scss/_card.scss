@@ -1,6 +1,18 @@
+$custom-neat-grid: (
+  columns: 12,
+  gutter: 50px,
+  media: 1000px,
+);
+
+
+
 .card {
-    padding: 5px;
-    @include outer-container(100%);
+
+  background:#fff;
+  border: 4px solid #000;
+
+  padding: 5px;
+  @include grid-container(100%);
 
 }
 
@@ -9,33 +21,56 @@
 }
 
 .card__wrap {
-    @include outer-container(100%);
-}
-.card__img {
-    @include span-columns(12 of 24);
+  @include grid-container(100%);
+
 }
 
-.card__img img {
+.card__img {
+  img {
     max-width:100%;
+  }
+
+  @include grid-column(12);
 }
 
 .card__desc {
-    @include span-columns(12 of 24);
+  @include grid-column(12);
 }
 
+
+@include grid-media($grid-setting-medium){
+  .card__img {
+    @include grid-column(6);
+  }
+
+  .card__desc {
+    @include grid-column(6);
+  }
+
+  &.--column-1{
+    .card__img {
+      @include grid-column(12);
+    }
+    .card__desc {
+      @include grid-column(12);
+    }
+  }
+}
+
+
 .card__price {
-    color: red;
-    font-size: 20px;
-    text-align:center;
+  color: red;
+  font-size: 20px;
+  text-align:center;
 }
 
 .card__showMoreDetail {
-    text-align:right;
-    margin-top:-25px;
-    padding-bottom:10px;
+  text-align:right;
+  margin-top:-25px;
+  padding-bottom:10px;
 }
 
 .card__showMoreDetail a {
-    text-decoration:none;
-    color:#000;
+  text-decoration:none;
+  color:#000;
 }

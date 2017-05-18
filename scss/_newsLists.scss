@@ -20,13 +20,13 @@
 
 
 .newsBox {
-    @include outer-container(100%);
+    @include grid-container(100%);
 }
 
 .newsBox__img{
-    @include span-columns(1 of 5);
+    @include grid-column(1 of 5);
 }
 
 .newsBox__title {
-    @include span-columns(4 of 5);
+    @include grid-column(4 of 5);
 }

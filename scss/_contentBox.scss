@@ -1,41 +1,83 @@
 
 .contentBox {
-    background:#fff;
-    @extend .defaultBorder
+  background:#fff;
+  border-radius:$base-border-radius;
+
+  padding: $base-spacing;
+
+  &.--blue {
+    background: $senja-blue;
+  }
+
+  &.--green{
+    background: $senja-green;
+  }
+
+  &.--red {
+    background: $senja-red;
+  }
+
+  &.--noPadding{
+    padding:0;
+
+  }
+
+  &.--noPadding{
+    padding:0;
+
+  }
+
+  padding: $small-spacing;
+
+
 }
 
-.contentBox--botMargin {
-    @include outer-container(100%);
-    @extend .contentBox;
-    margin-bottom:20px;
+.contentBox__title{
+  margin-left:-$small-spacing;
+  margin-right:-$small-spacing;
+
 }
 
-.contentBox--botMargin {
-    padding:5px;
+.contentBox__content{
+  
+
+  @include grid-container();
+
+  @include grid-collapse;
+
+  @include grid-media($grid-setting-large){
+
+    @include grid-collapse($grid-setting-large);
+  }
 }
 
-.contentBox--botMargin__image {
-    @include span-columns(6 of 12);
-}
+.contentBox__image {
+  @include grid-column(5);
 
-.contentBox--botMargin__image img {
-    max-width:100%;
-}
-
-.contentBox--botMargin__desc {
-    @include span-columns(6 of 12);
-}
-
-.contentBox--botMargin__images .images{
-    @include outer-container(100%);
-}
-
-.contentBox--botMargin__images .image {
-    @include span-columns(6 of 12);
+  @include grid-media($grid-setting-large){
+    @include grid-column(12);
+  }
 }
 
 
-.contentBox--botMargin__button {
+.contentBox__desc {
+  @include grid-column(7);
+
+  @include grid-media($grid-setting-large){
+    @include grid-column(12);
+  }
+}
+
+.contentBox__images .images{
+    @include grid-container(100%);
+}
+
+.contentBox__images .image {
+    @include grid-column(6 of 12);
+}
+
+
+.contentBox__button {
     background: #475689;
     margin: 10px 20px;
     text-align:center;
@@ -43,7 +85,7 @@
     border-radius:5px;
 }
 
-.contentBox--botMargin__button a {
+.contentBox__button a {
     color:#fff;
     text-decoration:none;
     font-size:20px;

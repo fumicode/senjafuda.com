@@ -1,39 +1,54 @@
 extends layouts/basic-layout
 
+block head
+  include ./includes/head
+
+block sidebar
+  include ./includes/sidebar
+
+block foot
+  include ./includes/foot
+
+
+
+
 block content
-  
-  div.cardLists--blue
-    :php
-      $parent_id = get_page_by_title('人気商品')->ID;   
-      $args = array( 
-        'post_type' => 'page',
-        'post_parent' => $parent_id,
-              );
-
-      $the_query = new WP_Query( $args );
-  
-  div.newsLists
-    div.newsLists__title
-      div 新着情報・メディア掲載
-    - while(have_posts()): the_post()
-    div
-      div
-        div <?= the_title(); ?>
-        div <?= the_content(); ?>
-    - endwhile;
-  div.contentBox--botMargin
-    h2.contentBox--botMargin__title 毎日更新！FaceBookやってます！
-    div.contentBox--botMargin__images
-      div.images
-        div.image
-          img(src="https://placehold.jp/500x300.png")
-        div.image
-          img(src="https://placehold.jp/500x300.png")
-    p.contentBox--botMargin__desc--full Facebookに、お店に来てくださった外国人のお客様の写真をアッ プしております。
-    div.contentBox--botMargin__button
-      a(href="") Facebook/senjafuda
-    
-
+  .contentLayout.--mainSub
+    .contentLayout__main
+      .contentBox.--green
+        .articleContent
+          - while(have_posts()): the_post()
+            - the_content(); 
+          - endwhile;
       
+    .contentLayout__sub
+      .contentBox.--green
+        .contentBox__title
+          h2 当店の人気商品
+
+        .contentBox__content
+          .cardLists.--column-1
+            :php
+              $parent_id = get_page_by_title('人気商品')->ID;   
+              $args = array( 
+                'post_type' => 'page',
+                'post_parent' => $parent_id,
+                      );
+
+              $the_query = new WP_Query( $args );
+
+            - while($the_query->have_posts()) : $the_query->the_post()
+              .cardLists__card
+                a(href="<?= get_the_permalink(); ?>")
+                  .card
+                    h3.card__title <?= the_title(); ?>
+                    .card__wrap
+                      .card__img
+                        img(src="https://placehold.jp/400x300.png")
+                      .card__desc <?= the_content(); ?>
+                    .card__price  <?= get_post_meta(get_the_ID(), 'price', true); ?>
+                    .card__showMoreDetail 詳しく見る>>
+
+            - endwhile;
 
   

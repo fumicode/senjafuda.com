@@ -1,0 +1,14 @@
+.menuButton{
+  padding:0;
+  border:0;
+  margin:0;
+
+  &:hover{
+    opacity:0.9;
+  }
+}
+
+.menuButton__image{
+  display:block;
+  max-height: $topbar-content-height;
+}

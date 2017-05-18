@@ -1,33 +1,41 @@
-@import "normalize.scss";
+@import "normalize";
 
-@import "bourbon";
-@import "neat";
+@import "bourbon/bourbon";
+@import "base/base";
+@import "neat/neat";
 
 
+@import "grid-settings";
 @import "body";
+@import "clearfix";
 
 @import "page";
 
 @import "defaultBorder";
+@import "otherLangs";
 @import "siteTitleBorder";
 @import "topHeader";
+@import "topbar";
+@import "slick-theme";
+@import "homeSlider";
+@import "homeSliderBox";
 
+@import "contentLayout";
+@import "contentBox";
+@import "articleContent";
 
-@import "contentBox.scss";
+@import "cardLists";
+@import "card";
 
-@import "cardLists.scss";
-@import "card.scss";
-
-@import "newsLists.scss";
+@import "newsLists";
+@import "menuButton";
 
 
 .image img {
     max-width:100%;
 }
 
-.defaultBorder {
-    border:1px solid #000;
-}
+
 
 
 

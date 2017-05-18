@@ -1,12 +1,34 @@
-div.topHeader
+.topHeader
+  .topHeader__topbar
+    .topbar
+      .topbar__inner
+        .topbar__siteTitle 
+          a(href="/")
+            img.topbar__siteLogo(src="<?= get_stylesheet_directory_uri()?>/images/topbar_sitelogo.jpg")
+        .topbar__otherLangs
+          ul.otherLangs.--on-topbarInside
+            li.otherLangs__item
+              a.otherLangs__link(href="/en")
+                img.otherLangs__image(src="<?= get_stylesheet_directory_uri()?>/images/lang_button_en.jpg")
 
-  div.topHeader__siteTitleBorder
-    div.siteTitleBorder__siteTitle 千社札.com
+            li.otherLangs__item
+              a.otherLangs__link(href="/en")
+                img.otherLangs__image(src="<?= get_stylesheet_directory_uri()?>/images/lang_button_ch.jpg")
 
-  div.topHeader__otherLang
+            li.otherLangs__item
+              a.otherLangs__link(href="/en")
+                img.otherLangs__image(src="<?= get_stylesheet_directory_uri()?>/images/lang_button_ko.jpg")
 
 
-    ul.otherLangs
+
+        .topbar__menuButton
+          button.menuButton
+            img.menuButton__image(src="<?= get_stylesheet_directory_uri()?>/images/menu_button.jpg")
+      
+
+
+  .topHeader__otherLangs
+    ul.otherLangs.--on-topbarBottom
       li.otherLangs__item
         a.otherLangs__link(href="/en")
           img.otherLangs__image(src="<?= get_stylesheet_directory_uri()?>/images/lang_button_en.jpg")

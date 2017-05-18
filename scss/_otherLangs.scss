@@ -2,11 +2,46 @@
 
 .otherLangs{
 
-}
-.otherLangs__item{
+  @include grid-container;
+
+  &.--on-topbarBottom{
+
+    @include grid-media($grid-setting-large){
+
+      display:none;
+
+    }
+    
+  }
+
+  &.--on-topbarInside{
+    height:$topbar-content-height;
+
+    
+    
+  }
 
 }
+
+.otherLangs__item{
+
+  @include grid-column(4);
+
+  
+
+}
+
+
+.otherLangs.--on-topbarInside .otherLangs__item{
+  height:$topbar-content-height;
+
+  line-height:  $topbar-content-height;
+}
+
 .otherLangs__link{
+  display:block;
+
+  text-align:center;
 
 }
 .otherLangs__image{

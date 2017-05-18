@@ -1,34 +1,45 @@
+
+$custom-neat-grid: (
+  columns: 12,
+  gutter: 50px,
+  media: 1000px,
+);
+
 .cardLists {
-    padding-bottom: 5px;
-    margin-bottom: 20px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+
+  @include grid-container;
+
 }
 
 .cardLists__title {
-    background:rgba(255,255,255,0.7);
-    border-top:4px solid #000;
-    border-bottom:4px solid #000;
-    font-size:20px;
+  padding-top:$small-spacing;
 }
 
 .cardLists__card {
 
-    background:#fff;
-    border: 4px solid #000;
-    margin:10px 5px;
+
+  padding:10px 5px;
+
+  @include grid-column(12 );
+
+  @include grid-media($grid-setting-large){
+    @include grid-column(6);
+  }
+
+
 }
+
+
+.cardLists.--column-1 .cardLists__card{
+  @include grid-column(12);
+}
+
 
 .cardLists__card {
-    @extend .cardLists__card;
+  @extend .cardLists__card;
 }
 
-.cardLists--blue {
-    background: #6874a6;
-    @extend .cardLists;
-}
-
-.cardLists--red {
-    background: #ae7d7d;
-    @extend .cardLists;
-}
 
 

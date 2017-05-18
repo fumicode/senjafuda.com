@@ -2,19 +2,33 @@ doctype html
 html
   head
     title= 千社札.com
+
+
+    meta(name="viewport", content="width=device-width,initial-scale=1")
+
     :php
       wp_enqueue_style('style', get_stylesheet_uri(), array(), time() );
-      wp_head();
-    meta(name="viewport", content="width=device-width,initial-scale=1")
+
+
+
+
+    block head_end
+
+    - wp_head()
+
   body
     div.page
       div.page__header
-        include ../includes/head
+        block head
       div.page__content
         div.page__main
           block content
         div.page__sidebar
-          include ../includes/sidebar
+          block sidebar
 
       div.page__footer
-        include ../includes/foot
+        block foot
+
+    block body_end
+
+    - wp_footer()

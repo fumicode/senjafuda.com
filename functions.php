@@ -32,3 +32,8 @@ function remove_width_attribute( $html ) {
 
 add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 );
 add_filter( 'image_send_to_editor', 'remove_width_attribute', 10 );
+
+
+
+//抜粋をサポート
+add_post_type_support( 'page', 'excerpt' );

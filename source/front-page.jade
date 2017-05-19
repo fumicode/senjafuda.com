@@ -92,7 +92,7 @@ block content
                     div.card__wrap
                       div.card__img
                         - echo get_the_post_thumbnail( $page->ID );
-                      div.card__desc <?= the_content(); ?>
+                      div.card__desc <?= the_excerpt(); ?>
                     div.card__price  <?= get_post_meta(get_the_ID(), 'price', true); ?>
                     div.card__showMoreDetail 詳しく見る>>
 
@@ -127,7 +127,7 @@ block content
                     div.card__wrap
                       div.card__img
                         - echo get_the_post_thumbnail( $page->ID);
-                      div.card__desc <?= the_content(); ?>
+                      div.card__desc <?= the_excerpt(); ?>
                 
             - endwhile;
 
@@ -150,7 +150,7 @@ block content
                   }
                   $news_img_path = get_stylesheet_directory_uri() . "/images/news_cat_" . $category . ".jpg";
                 img(src="<?= $news_img_path ?>")
-              div.newsBox__title <?= the_title(); ?>
+              div.newsBox__title <?= the_content(); ?>
           - endwhile;
       
 

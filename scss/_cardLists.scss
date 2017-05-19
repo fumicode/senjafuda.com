@@ -28,6 +28,9 @@ $custom-neat-grid: (
     @include grid-column(6);
   }
 
+  &:nth-child(odd){
+    clear:left;
+  }
 
 }
 

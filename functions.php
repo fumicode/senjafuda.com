@@ -26,3 +26,6 @@ function custom_attribute( $html ){
   $html = preg_replace('/(width|height)="\d*"\s/', '', $html);
   return $html;
 }
+
+//抜粋をサポート
+add_post_type_support( 'page', 'excerpt' );

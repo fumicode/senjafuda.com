@@ -53,74 +53,83 @@ block content
           div.contentBox__desc 千社札と書いて「せんじゃふだ(せんしゃふだ)」と読みます。世の中の安泰と家内安全を願う千社参りの札を、略して千社札というようになったとされています。当店ではこの千社札をシール・ストラップ・名刺にして、銀座歌舞伎座の向かいで販売しています。
 
 
-  div.contentBox.--green
-    div.contentBox__title
-      h2 当店の人気商品
+  .contentLayout.--column-1
+    .contentLayout__content
+      div.contentBox.--green
+        div.contentBox__title
+          h2 当店の人気商品
 
-    div.contentBox__content
-      div.cardLists.--green
-        :php
-          $parent_id = get_page_by_title('人気商品')->ID;   
-          $args = array( 
-            'post_type' => 'page',
-            'post_parent' => $parent_id,
-                  );
+        div.contentBox__content
+          div.cardLists.--green
+            :php
+              $parent_id = get_page_by_path('items')->ID;              
+              $args = array( 
+                'post_type' => 'page',
+                'post_parent' => $parent_id,
+                      );
 
-          $the_query = new WP_Query( $args );
+              $the_query = new WP_Query( $args );
 
-        - while($the_query->have_posts()) : $the_query->the_post()
-          div.cardLists__card
-            a(href="<?= get_the_permalink(); ?>")
-              div.card
-                h3.card__title <?= the_title(); ?>
-                div.card__wrap
-                  div.card__img
-                    img(src="https://placehold.jp/400x300.png")
-                  div.card__desc <?= the_content(); ?>
-                div.card__price  <?= get_post_meta(get_the_ID(), 'price', true); ?>
-                div.card__showMoreDetail 詳しく見る>>
+            - while($the_query->have_posts()) : $the_query->the_post()
+              div.cardLists__card
+                a.card__link(href="<?= get_the_permalink(); ?>")
+                  div.card
+                    h3.card__title <?= the_title(); ?>
+                    div.card__wrap
+                      div.card__img
+                        img(src="https://placehold.jp/400x300.png")
+                      div.card__desc <?= the_content(); ?>
+                    div.card__price  <?= get_post_meta(get_the_ID(), 'price', true); ?>
+                    div.card__showMoreDetail 詳しく見る>>
 
-        - endwhile;
-    
-  .contentBox.--red
-    .contentBox__title
-      h2 ご購入事例の紹介
+            - endwhile;
+      
 
-    .contentBox__content
-      div.cardLists.--red
-        :php
-          $parent_id = get_page_by_title('購入事例')->ID;   
-          $args = array( 
-            'post_type' => 'page',
-            'post_parent' => $parent_id,
-          );
+  .contentLayout.--column-2
 
-          $the_query = new WP_Query( $args );  
+    .contentLayout__left
+      .contentBox.--red
+        .contentBox__title
+          h2 ご購入事例の紹介
 
-        - while($the_query->have_posts()) : $the_query->the_post()
+        .contentBox__content
+          div.cardLists.--red.--column-1
+            :php
+              $parent_id = get_page_by_path('examples')->ID;              
+              $args = array( 
+                'post_type' => 'page',
+                'post_parent' => $parent_id,
+              );
 
-        div.cardLists__card
-          div.card
-            h3.card__title <?= the_title(); ?>
-            div.card__wrap
-              div.card__desc <?= the_content(); ?>
-              div.card__img
-                img(src="https://placehold.jp/400x300.png")
-            
-        - endwhile;
+              $the_query = new WP_Query( $args );  
 
-  div.contentBox.--blue
-    div.contentBox__title
-      h2 新着情報・メディア掲載
+            - while($the_query->have_posts()) : $the_query->the_post()
 
-    .newsLists
-      - while(have_posts()): the_post()
-      div.newsLists__newsBox
-        div.newsBox
-          div.newsBox__img
-            img(src="https://placehold.jp/50x120.png")
-          div.newsBox__title <?= the_title(); ?>
-      - endwhile;
+              div.cardLists__card
+
+                a.card__link(href="<?= get_the_permalink(); ?>")
+                  div.card
+                    h3.card__title <?= the_title(); ?>
+                    div.card__wrap
+                      div.card__img
+                        img(src="https://placehold.jp/400x300.png")
+                      div.card__desc <?= the_content(); ?>
+                
+            - endwhile;
+
+    .contentLayout__right
+      div.contentBox.--blue
+        div.contentBox__title
+          h2 新着情報・メディア掲載
+
+        .newsLists
+          - while(have_posts()): the_post()
+          div.newsLists__newsBox
+            div.newsBox
+              div.newsBox__img
+                img(src="https://placehold.jp/50x120.png")
+              div.newsBox__title <?= the_title(); ?>
+          - endwhile;
       
 
   div.contentBox

@@ -39,7 +39,7 @@ block content
 
             - while($the_query->have_posts()) : $the_query->the_post()
               .cardLists__card
-                a(href="<?= get_the_permalink(); ?>")
+                a.card__link(href="<?= get_the_permalink(); ?>")
                   .card
                     h3.card__title <?= the_title(); ?>
                     .card__wrap

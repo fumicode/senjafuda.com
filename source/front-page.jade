@@ -91,7 +91,7 @@ block content
                           
                     div.card__wrap
                       div.card__img
-                        - get_the_post_thumbnail( $page->ID, 'thumbnail' );
+                        - echo get_the_post_thumbnail( $page->ID, 'full' );
                       div.card__desc <?= the_content(); ?>
                     div.card__price  <?= get_post_meta(get_the_ID(), 'price', true); ?>
                     div.card__showMoreDetail 詳しく見る>>

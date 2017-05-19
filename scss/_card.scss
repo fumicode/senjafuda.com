@@ -5,15 +5,26 @@ $custom-neat-grid: (
 );
 
 
-
 .card {
-
   background:#fff;
   border: 4px solid #000;
 
   padding: 5px;
   @include grid-container(100%);
 
+}
+
+a.card__link {
+  display:block;
+  text-decoration:none;
+  color:$base-font-color;
+
+  &:hover{
+    transform:scale(1.01);
+
+    
+
+  }
 }
 
 .card__title {
@@ -26,6 +37,7 @@ $custom-neat-grid: (
 }
 
 .card__img {
+  text-align:center;
   img {
     max-width:100%;
   }

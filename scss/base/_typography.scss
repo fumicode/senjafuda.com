@@ -17,7 +17,23 @@ h6 {
   margin: 0 0 $small-spacing;
 }
 
-h2{
+
+
+h1, .h1{
+  background:rgba(255,255,255,0.8);
+
+  padding:$small-spacing;
+  border:$card-border-width double #000;
+
+  &.n{
+    background:none;
+    padding:0;
+    border:0;
+
+  }
+}
+
+h2, .h2{
 
   background:rgba(255,255,255,0.8);
   padding:$small-spacing;
@@ -31,6 +47,18 @@ h2{
 
   }
 }
+
+h3, .h3{
+  padding:$small-spacing;
+  border-bottom:$card-border-width double #000;
+
+  &.n{
+    padding:0;
+    border:0;
+
+  }
+}
+
 
 
 
@@ -60,3 +88,63 @@ hr {
   border-top: 0;
   margin: $base-spacing 0;
 }
+
+
+
+/**
+ * 8.0 Alignments
+ */
+
+.alignleft {
+	display: inline;
+	float: left;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+}
+
+.aligncenter {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+blockquote.alignleft,
+.wp-caption.alignleft,
+img.alignleft {
+	margin: 0.4em 1.6em 1.6em 0;
+}
+
+blockquote.alignright,
+.wp-caption.alignright,
+img.alignright {
+	margin: 0.4em 0 1.6em 1.6em;
+}
+
+blockquote.aligncenter,
+.wp-caption.aligncenter,
+img.aligncenter {
+	clear: both;
+	margin-top: 0.4em;
+	margin-bottom: 1.6em;
+}
+
+.wp-caption.alignleft,
+.wp-caption.alignright,
+.wp-caption.aligncenter {
+	margin-bottom: 1.2em;
+}
+
+
+// block quote
+
+blockquote{
+  margin:0;
+  padding:$base-spacing;
+  background:rgba(255,255,255,0.8);
+
+}
+
+

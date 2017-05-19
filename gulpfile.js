@@ -12,7 +12,7 @@ var sourcemaps = require("gulp-sourcemaps");
 gulp.task("scss", function(){ 
   return gulp.src("./scss/*.scss")
     .pipe(plumber({
-      errorHandler: notify.onError("Error: <%= error.message %>") //<-
+      errorHandler: notify.onError("SCSS Error: <%= error.message %>") //<-
     }))
     .pipe(sourcemaps.init())
       .pipe(sass({
@@ -26,6 +26,9 @@ gulp.task("scss", function(){
 
 gulp.task("riot", function(){ 
   return gulp.src("./riottags/*.jade")
+    .pipe(plumber({
+      errorHandler: notify.onError("Riot Error: <%= error.message %>") //<-
+    }))
     .pipe(riot( {
       template:"pug"
     }))
@@ -41,6 +44,9 @@ gulp.task('watch',function () {
 
 gulp.task('templates', function() {
   gulp.src('./source/*.jade')
+    .pipe(plumber({
+      errorHandler: notify.onError("Template Error: <%= error.message %>") //<-
+    }))
     .pipe(jade({
       pretty:true
     }))

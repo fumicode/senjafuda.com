@@ -5,6 +5,9 @@ node_modules
 style.css
 style.css.map
 
+editor.css
+editor.css.map
+
 *~
 *#
 

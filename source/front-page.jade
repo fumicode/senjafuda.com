@@ -3,8 +3,6 @@ extends layouts/basic-layout
 block head
   include ./includes/head
 
-block sidebar
-  include ./includes/sidebar
 
 block foot
   include ./includes/foot
@@ -31,7 +29,7 @@ block body_end
 
   
 block content
-
+  include ./includes/mixin_card
   .contentLayout.--mainSub
     .contentLayout__main
       #homeSlider.homeSlider
@@ -59,6 +57,7 @@ block content
         div.contentBox__title
           h2 当店の人気商品
 
+
         div.contentBox__content
           div.cardLists.--green
             :php
@@ -73,28 +72,7 @@ block content
             - while($the_query->have_posts()) : $the_query->the_post()
               div.cardLists__card
                 a.card__link(href="<?= get_the_permalink(); ?>")
-                  div.card
-                    .card__header
-                      .card__catch
-                         :php
-                          $full_slug = get_page_uri(get_the_ID());  
-                          $slug = str_replace('items/','item_catch_', $full_slug) . ".jpg";
-                          $slug_catch_path =  get_stylesheet_directory_uri() . "/images/" . $slug;
-                         img(src="<?= $slug_catch_path ?>")
-
-                      .card__title
-                        h3.n
-                          :php
-                            $slug = str_replace('items/','item_title_', $full_slug) . ".jpg";
-                            $slug_path =  get_stylesheet_directory_uri() . "/images/" . $slug;
-                          img(src="<?= $slug_path ?>")
-                          
-                    div.card__wrap
-                      div.card__img
-                        - echo get_the_post_thumbnail( $page->ID );
-                      div.card__desc <?= the_excerpt(); ?>
-                    div.card__price  <?= get_post_meta(get_the_ID(), 'price', true); ?>
-                    div.card__showMoreDetail 詳しく見る>>
+                  +item_card()
 
             - endwhile;
       
@@ -166,7 +144,7 @@ block content
           img(src="https://placehold.jp/500x300.png")
     p.contentBox__desc--full Facebookに、お店に来てくださった外国人のお客様の写真をアップしております。
     div.contentBox__button
-      a(href="") Facebook/senjafuda
+      a(href="https://www.facebook.com/senjafuda") Facebook/senjafuda
     
 
     

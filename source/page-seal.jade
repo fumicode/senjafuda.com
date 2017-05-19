@@ -1,0 +1,63 @@
+extends layouts/2column-layout
+
+block head
+  include ./includes/head
+
+
+block foot
+  include ./includes/foot
+
+
+block head_end
+
+  - wp_enqueue_script("jquery")
+  - wp_enqueue_script("slick", '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js')
+  - wp_enqueue_style("slickcss", '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css')
+
+
+block body_end
+  script.
+
+    jQuery(function(){
+      jQuery('#sealList').slick({
+        autoplay:true,
+        autoplaySpeed:4000, //4秒
+        slidesToShow:6,
+        slidesToScroll:6,
+      });
+
+
+    });
+
+block content
+  .contentBox.--green
+    .articleContent
+
+      ul#sealList.sealList
+        - for($i = 1; $i < 100; $i ++):
+          li.sealList__item 
+            img.sealList__image(src="<?= get_stylesheet_directory_uri()?>/images/seals/<?= $i ?>.JPG")
+            .sealList__number
+              - echo $i;
+
+        - endfor;
+
+      
+      - if(is_404()):
+
+        h1(style="text-align:center;") ページが見つかりません
+        p(style="text-align:center;") 申し訳ありません。お探しのページが見つかりません。
+
+      - else:
+
+        - while(have_posts()): the_post()
+          - the_content(); 
+        - endwhile;
+
+      - endif;
+
+      
+block sidebar
+  include ./includes/sidebar
+
+

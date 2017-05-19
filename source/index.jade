@@ -1,54 +1,33 @@
-extends layouts/basic-layout
+
+extends layouts/2column-layout
 
 block head
   include ./includes/head
 
-block sidebar
-  include ./includes/sidebar
 
 block foot
   include ./includes/foot
 
 
-
-
 block content
-  .contentLayout.--mainSub
-    .contentLayout__main
-      .contentBox.--green
-        .articleContent
-          - while(have_posts()): the_post()
-            - the_content(); 
-          - endwhile;
+  .contentBox.--green
+    .articleContent
+
+      - if(is_404()):
+
+        h1(style="text-align:center;") ページが見つかりません
+        p(style="text-align:center;") 申し訳ありません。お探しのページが見つかりません。
+
+      - else:
+
+        - while(have_posts()): the_post()
+          - the_content(); 
+        - endwhile;
+
+      - endif;
+
       
-    .contentLayout__sub
-      .contentBox.--green
-        .contentBox__title
-          h2 当店の人気商品
+block sidebar
+  include ./includes/sidebar
 
-        .contentBox__content
-          .cardLists.--column-1
-            :php
-              $parent_id = get_page_by_title('人気商品')->ID;   
-              $args = array( 
-                'post_type' => 'page',
-                'post_parent' => $parent_id,
-                      );
 
-              $the_query = new WP_Query( $args );
-
-            - while($the_query->have_posts()) : $the_query->the_post()
-              .cardLists__card
-                a.card__link(href="<?= get_the_permalink(); ?>")
-                  .card
-                    h3.n.card__title <?= the_title(); ?>
-                    .card__wrap
-                      .card__img
-                        - echo get_the_post_thumbnail( $page->ID );
-                      .card__desc <?= the_excerpt(); ?>
-                    .card__price  <?= get_post_meta(get_the_ID(), 'price', true); ?>
-                    .card__showMoreDetail 詳しく見る>>
-
-            - endwhile;
-
-  

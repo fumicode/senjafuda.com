@@ -1,0 +1,24 @@
+mixin item_card
+  .card
+    .card__header
+      .card__catch
+         :php
+          $full_slug = get_page_uri(get_the_ID());  
+          $slug = str_replace('items/','item_catch_', $full_slug) . ".jpg";
+          $slug_catch_path =  get_stylesheet_directory_uri() . "/images/" . $slug;
+         img(src="<?= $slug_catch_path ?>")
+
+      .card__title
+        h3.n
+          :php
+            $slug = str_replace('items/','item_title_', $full_slug) . ".jpg";
+            $slug_path =  get_stylesheet_directory_uri() . "/images/" . $slug;
+          img(src="<?= $slug_path ?>")
+          
+    .card__wrap
+      .card__img
+        - echo get_the_post_thumbnail( $page->ID );
+      .card__desc <?= the_excerpt(); ?>
+    .card__price  <?= get_post_meta(get_the_ID(), 'price', true); ?>
+    .card__showMoreDetail 詳しく見る>>
+

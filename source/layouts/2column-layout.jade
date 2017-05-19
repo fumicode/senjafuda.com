@@ -17,11 +17,17 @@ html
     - wp_head();
 
   body
+
     div.page
       div.page__header
         block head
       div.page__content
-        block content
+        .contentLayout.--mainSub
+          .contentLayout__main
+            block content
+
+          .contentLayout__sub
+            block sidebar
 
       div.page__footer
         block foot

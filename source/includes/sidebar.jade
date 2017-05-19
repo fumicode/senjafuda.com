@@ -1,0 +1,24 @@
+.sidebar
+  include ./mixin_card
+  .contentBox.--green
+    .contentBox__title
+      h2 当店の人気商品
+
+    .contentBox__content
+      .cardLists.--column-1
+        :php
+          $parent_id = get_page_by_title('人気商品')->ID;   
+          $args = array( 
+            'post_type' => 'page',
+            'post_parent' => $parent_id,
+                  );
+
+          $the_query = new WP_Query( $args );
+
+        - while($the_query->have_posts()) : $the_query->the_post()
+          .cardLists__card
+            a.card__link(href="<?= get_the_permalink(); ?>")
+              +item_card()
+
+        - endwhile;
+

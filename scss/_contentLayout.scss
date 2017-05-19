@@ -83,7 +83,7 @@
 
 ///////////////////////// 2-column layout /////////////////////////////
 
-.contentLayout.--column-2{
+.contentLayout.--column-1{
   .contentLayout__content{
     @include grid-column(12);
   }

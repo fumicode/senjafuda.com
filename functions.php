@@ -19,10 +19,16 @@ set_post_thumbnail_size( 400, 300, array('center','center'));
 add_image_size( 'thumbnail4x4', 400, 400, true );
 add_image_size( 'slider', 1080, 610, true );
 
-//html のwidth やheightを削除する
-add_filter( 'post_thumbnail_html', 'custom_attribute' );
-function custom_attribute( $html ){
-  // width height を削除する
-  $html = preg_replace('/(width|height)="\d*"\s/', '', $html);
+
+
+/**
+ * 画像挿入時にwidthとheightを削除する
+*/
+
+function remove_width_attribute( $html ) {
+  $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
   return $html;
 }
+
+add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 );
+add_filter( 'image_send_to_editor', 'remove_width_attribute', 10 );

@@ -10,6 +10,7 @@
 @import "clearfix";
 
 @import "page";
+@import "black-box";
 
 @import "defaultBorder";
 @import "otherLangs";
@@ -19,6 +20,8 @@
 @import "slick-theme";
 @import "homeSlider";
 @import "homeSliderBox";
+@import "spMenuBox";
+
 
 @import "contentLayout";
 @import "contentBox";
@@ -34,11 +37,3 @@
 .image img {
     max-width:100%;
 }
-
-
-
-
-
-
-
-

@@ -1,0 +1,86 @@
+.black-box{
+  border:solid 2px black;
+  color: black;
+}
+
+
+.white-box{
+  background: white;
+  color: black;
+
+}
+
+
+$spmenu-width:300px;
+.spMenuBox{
+  width:$spmenu-width;
+  background: green;
+}
+
+.spMenuBox__header{
+  background: green;
+  padding:5px;
+  @extend .clearfix;
+}
+
+.button{
+  background: white;
+
+  &.--cart{
+    display: inline-block;
+    @extend .black-box;
+    @include grid-column(1 of 4);
+  }
+
+  &.--signup{
+    display: inline-block;
+    @extend .black-box;
+    @include grid-column(3 of 4);
+  }
+}
+
+$menu-font-size:15px;
+.menu__item{
+  @extend .white-box;
+  line-height: 1;
+  font-size: $menu-font-size;
+}
+
+$menu-content-margin:3px;
+$menu-item-padding:3px;
+.spMenuBox__contentBox{
+  @extend .white-box;
+  margin-bottom: $menu-content-margin;
+  padding:$menu-item-padding;
+}
+
+$menu-title-font-size:30px;
+.menu__title{
+  font-size: $menu-title-font-size;
+}
+
+.gridLayout{
+  &.--twoCols{
+    margin-bottom: 0px;
+  }
+  &.--bottom{
+    margin-top:-2px;
+  }
+}
+
+.gridLayout__item{
+  @include grid-column(1 of 2);
+  @extend .black-box;
+  height:$menu-font-size * 5;
+  padding:3px;
+  &.--right{
+    margin-left: -2px;
+  }
+}
+.itemName{
+  color:black;
+  font-size:$menu-font-size;
+  line-height: 1;
+  word-break: normal;
+  vertical-align: bottom;
+}

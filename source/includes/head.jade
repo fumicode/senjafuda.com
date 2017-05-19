@@ -2,7 +2,7 @@
   .topHeader__topbar
     .topbar
       .topbar__inner
-        .topbar__siteTitle 
+        .topbar__siteTitle
           a(href="/")
             img.topbar__siteLogo(src="<?= get_stylesheet_directory_uri()?>/images/topbar_sitelogo.jpg")
         .topbar__otherLangs
@@ -24,7 +24,7 @@
         .topbar__menuButton
           button.menuButton
             img.menuButton__image(src="<?= get_stylesheet_directory_uri()?>/images/menu_button.jpg")
-      
+
 
 
   .topHeader__otherLangs
@@ -41,5 +41,54 @@
         a.otherLangs__link(href="/en")
           img.otherLangs__image(src="<?= get_stylesheet_directory_uri()?>/images/lang_button_ko.jpg")
 
-
-      
+  .spMenuBox
+    .spMenuBox__header
+      a.button.--cart(href="#") cart
+      a.button.--signup(href="#") signup
+    .spMenuBox__contentBox.--what
+      a.menu__item(href="#") 千社札とは？
+    .spMenuBox__contentBox.--products
+      .menu__title 千社札.comの商品
+      table.gridLayout.--twoCols
+        tr
+          th.gridLayout__item
+            a.itemName(href="#") 千社札ストラップ
+          th.gridLayout__item.--right
+            a.itemName(href="#") 京ちりめんストラップ
+      table.gridLayout.--towCols.--bottom
+        tr
+          th.gridLayout__item
+            a.itemName(href="#") 千社札シール
+          th.gridLayout__item.--right
+            a.itemName(href="#") 千社札名刺
+    .spMenuBox__contentBox.--example
+      .menu__title ご購入事例
+      table.gridLayout.--twoCols
+        tr
+          th.gridLayout__item
+            a.itemName(href="#") 同窓会の記念に
+          th.gridLayout__item.--right
+            a.itemName(href="#") 甲子園出場の記念に
+      table.gridLayout.--towCols.--bottom
+        tr
+          th.gridLayout__item
+            a.itemName(href="#") 外国人へのおみやげに
+          th.gridLayout__item.--right
+            a.itemName(href="#") 行事の記念に
+    .spMenuBox__contentBox.--flow
+      .menu__title ご購入の流れ
+      table.gridLayout.--towCols
+        tr
+          th.gridLayout__item
+            a.itemName(href="#") 送料について
+          th.gridLayout__item.--right
+            a.itemName(href="#") お支払方法
+    .spMenuBox__contentBox.--infomation
+      .menu__title お店情報
+      a.menu__item(href="#") 会社情報・マップ・特商法表示
+    .spMenuBox__contentBox.--policy
+      a.menu__item(href="#") プライバシーポリシー
+    .spMenuBox__contentBox.--contact
+      a.menu__item(href="#") お問い合わせ
+    .spMenuBox__contentBox.english
+      a.menu__item(href="#") EnglishPage

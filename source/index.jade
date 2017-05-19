@@ -44,8 +44,8 @@ block content
                     h3.n.card__title <?= the_title(); ?>
                     .card__wrap
                       .card__img
-                        img(src="https://placehold.jp/400x300.png")
-                      .card__desc <?= the_content(); ?>
+                        - echo get_the_post_thumbnail( $page->ID );
+                      .card__desc <?= the_excerpt(); ?>
                     .card__price  <?= get_post_meta(get_the_ID(), 'price', true); ?>
                     .card__showMoreDetail 詳しく見る>>
 

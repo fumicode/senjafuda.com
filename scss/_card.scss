@@ -86,3 +86,16 @@ a.card__link {
   text-decoration:none;
   color:#000;
 }
+
+.card__header {
+    @include grid-container(100%);
+}
+
+.card__catch{
+    @include grid-column(2);
+}
+
+.card__title {
+    @include grid-column(8);
+}
+

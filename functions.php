@@ -10,3 +10,6 @@ function custom_editor_settings( $initArray ){
 }
 
 add_filter( 'tiny_mce_before_init', 'custom_editor_settings' );
+// サムネイルをサポート
+add_theme_support( 'post-thumbnails');
+

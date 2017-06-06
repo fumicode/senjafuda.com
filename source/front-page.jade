@@ -30,8 +30,8 @@ block body_end
   
 block content
   include ./includes/mixin_card
-  .contentLayout.--mainSub
-    .contentLayout__main
+  .contentLayout.--column-1
+    .contentLayout__content
       #homeSlider.homeSlider
         .homeSlider__slide
           a.homeSlider__link(href="")
@@ -41,7 +41,8 @@ block content
           a.homeSlider__link(href="")
             img.homeSlider__image(src="<?= get_stylesheet_directory_uri() ?>/images/slider_slide_2.jpg")
 
-    .contentLayout__sub
+    //
+      .contentLayout__sub
       div.contentBox
         h2.n 千社札とは？
 

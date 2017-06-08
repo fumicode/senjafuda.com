@@ -102,7 +102,7 @@ block content
 
                 a.card__link(href="<?= get_the_permalink(); ?>")
                   div.card
-                    h3.n.card__title <?= the_title(); ?>
+                    h3.n <?= the_title(); ?>
                     div.card__wrap
                       div.card__img
                         - echo get_the_post_thumbnail( $page->ID);

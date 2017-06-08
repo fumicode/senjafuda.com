@@ -10,6 +10,7 @@ $custom-neat-grid: (
   margin-bottom: 20px;
 
   @include grid-container;
+  @include grid-collapse;
 
 }
 
@@ -18,31 +19,32 @@ $custom-neat-grid: (
 }
 
 .cardLists__card {
+  padding-bottom:$small-spacing;
 
 
-  padding:10px 5px;
-
-  @include grid-column(12 );
-
-  @include grid-media($grid-setting-large){
-    @include grid-column(6);
-  }
-
-  &:nth-child(odd){
+  @include grid-column(6);
+	
+	&:nth-child(2n+1){
     clear:left;
   }
 
-}
+  @include grid-media($grid-setting-large){
+    @include grid-column(4 of 12);
 
+		&:nth-child(2n+1){
+			clear:none;
+		}
+		&:nth-child(3n+1){
+			clear:left;
+		}
+  }
+}
 
 .cardLists.--column-1 .cardLists__card{
   @include grid-column(12);
 }
 
-
 .cardLists__card {
   @extend .cardLists__card;
 }
-
-
 

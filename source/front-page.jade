@@ -67,7 +67,8 @@ block content
                 'post_type' => 'page',
                 'post_parent' => $parent_id,
                 'orderby' => 'menu_order',
-                      );
+                'order' => 'ASC',
+              );
 
               $the_query = new WP_Query( $args );
 

@@ -66,6 +66,7 @@ block content
               $args = array( 
                 'post_type' => 'page',
                 'post_parent' => $parent_id,
+                'orderby' => 'menu_order',
                       );
 
               $the_query = new WP_Query( $args );
@@ -92,6 +93,7 @@ block content
               $args = array( 
                 'post_type' => 'page',
                 'post_parent' => $parent_id,
+                'orderby' => 'menu_order',
               );
 
               $the_query = new WP_Query( $args );  

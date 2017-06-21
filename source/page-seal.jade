@@ -20,26 +20,72 @@ block body_end
 
     jQuery(function(){
       jQuery('#sealList').slick({
+        //autoplay:true,
+        //autoplaySpeed:4000, //4秒
+        slidesToShow:1,
+        slidesToScroll:1,
+        arrows:false,
+        asNavFor: '#sealTabList'
+      });
+    });
+
+
+    jQuery(function(){
+      jQuery('.sealTabList').slick({
         autoplay:true,
         autoplaySpeed:4000, //4秒
-        slidesToShow:6,
-        slidesToScroll:6,
+        slidesToShow: <?= $sealNum/$tabNum ?>,
+        //slidesToScroll:<?= $sealNum/$tabNum ?>,
+        focusOnSelect: true,
+
+        asNavFor: '#sealList'
       });
-
-
     });
 
 block content
   .contentBox.--green
     .articleContent
 
-      ul#sealList.sealList
-        - for($i = 1; $i < 100; $i ++):
-          li.sealList__item 
-            img.sealList__image(src="<?= get_stylesheet_directory_uri()?>/images/seals/<?= $i ?>.JPG")
-            .sealList__number
-              - echo $i;
+      - $sealNum = 200;
+      - $tabNum = 50;
+      - $groupNum = 5;
+      - $seal_id = 1;
 
+      #sealTabList.sealTabList
+        - for($tab_i = 0; $tab_i < $sealNum/$tabNum; $tab_i++):
+          - $seal_id_prev = $tab_i * $tabNum + 1; 
+          - $seal_id_next = $seal_id_prev + $tabNum;
+
+          .sealTabList__tab
+            - echo $seal_id_prev . ' - ' .  $seal_id_next
+        - endfor;
+
+      ul#sealList.sealList
+        - for($tab_i = 0; $tab_i < $sealNum/$tabNum; $tab_i++):
+          li.sealList__tab
+            - echo 'tab ' . $tab_i
+
+            - for($group_i = 0; $group_i < $tabNum/$groupNum; $group_i++):
+              table.sealGroup
+                tr 
+                  - for($seal_i = 1 ; $seal_i <= $groupNum; $seal_i++):
+                    td.sealGroup__item
+
+                      img.sealGroup__image(src="<?= get_stylesheet_directory_uri()?>/images/seals/<?= $seal_id ?>.jpg")
+                      .sealGroup__number
+                        - echo 'seal '. $seal_id;
+                    - $seal_id ++;
+                  - endfor;
+            - endfor;
+        -endfor;
+
+      #sealTabList.sealTabList
+        - for($tab_i = 0; $tab_i < $sealNum/$tabNum; $tab_i++):
+          - $seal_id_prev = $tab_i * $tabNum + 1; 
+          - $seal_id_next = $seal_id_prev + $tabNum;
+
+          .sealTabList__tab
+            - echo $seal_id_prev . ' - ' .  $seal_id_next
         - endfor;
 
       

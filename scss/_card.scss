@@ -31,9 +31,6 @@ a.card__link {
     text-align:center;
 }
 
-.card__wrap {
-
-}
 
 .card__img {
   text-align:center;
@@ -46,26 +43,11 @@ a.card__link {
 .card__desc {
 }
 
+.card__title{
+  font-size:inherit;
+  margin:0;
 
-@include grid-media($grid-setting-medium){
-  .card__img {
-    @include grid-column(6);
-  }
-
-  .card__desc {
-    @include grid-column(6);
-  }
-
-  &.--column-1{
-    .card__img {
-      @include grid-column(12);
-    }
-    .card__desc {
-      @include grid-column(12);
-    }
-  }
 }
-
 
 .card__price {
   color: red;
@@ -75,8 +57,6 @@ a.card__link {
 
 .card__showMoreDetail {
   text-align:right;
-  margin-top:-25px;
-  padding-bottom:10px;
 }
 
 .card__showMoreDetail a {
@@ -84,16 +64,4 @@ a.card__link {
   color:#000;
 }
 
-.card__header {
-    @include grid-container(100%);
-    @include grid-collapse;
-}
-
-.card__catch{
-    @include grid-column(2);
-}
-
-.card__title {
-    @include grid-column(8);
-}
 

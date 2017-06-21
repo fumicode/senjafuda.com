@@ -64,6 +64,9 @@ h3, .h3{
 
 p {
   margin: 0 0 $small-spacing;
+  &.n{
+    margin: 0;
+  }
 }
 
 a {

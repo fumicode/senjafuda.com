@@ -1,0 +1,38 @@
+
+.flowTitle{
+
+  color:white;
+
+  border-collapse:separate;
+
+  border-spacing:3px;
+}
+
+.flowTitle__item{
+  padding:10px 3px;
+
+  margin:5px;
+
+  &.--before,
+  &.--after{
+    width:1em;
+  }
+
+  &.--before{
+    background:gray;
+  }
+
+  &.--title{
+    padding:10px 5px;
+    background:green;
+    & h2{
+      margin: 0;
+    }
+  }
+
+  &.--after{
+    background:lightgreen;
+  }
+}
+
+

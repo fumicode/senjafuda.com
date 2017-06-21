@@ -2,31 +2,24 @@
     background:#fff;
     margin-bottom: 20px;
 }
+
 .newsLists-border {
-    border: 1px solid #000;
+    border-bottom: 1px solid #000;
 }
 
-.newsLists__title {
-    @extend .newsLists-border;
-    font-size: 20px;
-    padding: 20px;
-}
 
 .newsLists__newsBox {
-    padding:20px;
     @extend .newsLists-border;
-    
 }
 
 
 .newsBox {
-    @include grid-container(100%);
+  padding:$small-spacing;
 }
 
-.newsBox__img{
-    @include grid-column(1 of 5);
-}
+.newsBox__content{
+  p{
+    @extend .n;
 
-.newsBox__title {
-    @include grid-column(4 of 5);
+  }
 }

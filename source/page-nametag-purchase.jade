@@ -1,0 +1,225 @@
+extends layouts/2column-layout
+
+block head
+  include ./includes/head
+
+
+block foot
+  include ./includes/foot
+
+
+block head_end
+
+  - wp_enqueue_script("jquery")
+  - wp_enqueue_script("slick", '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js')
+  - wp_enqueue_style("slickcss", '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css')
+
+
+block body_end
+  script.
+
+    jQuery(function(){
+      jQuery('.optionSelector.--column-3').slick({
+        slidesToShow:1,
+        slidesToScroll:1,
+        centerMode:true,
+        centerPadding:"200px",
+        focusOnSelect:true,
+        arrows:false,
+        //variableWidth:true
+      });
+
+      jQuery('.optionSelector.--column-2').slick({
+        slidesToShow:2,
+        slidesToScroll:1,
+        focusOnSelect:true,
+        arrows:false,
+      });
+    });
+
+
+block content
+  .contentBox.--green
+    .articleContent
+
+      h1 ネームタグご注文ページ
+
+      img(src="<?= get_stylesheet_directory_uri()?>/images/nametag_top.png" alt="ゴルフネームタグ" style="width:100%")
+
+
+
+      div(style="height:100px ")
+
+      h3.n ネームタグ・デザインの流れ
+
+      .flowOverview
+        .flowOverview__item 1.材質を選ぶ
+        .flowOverview__arrow ▼
+          
+
+        .flowOverview__item 2.裏面を選ぶ
+        .flowOverview__arrow ▼
+
+        .flowOverview__item 3.文字を決める
+        .flowOverview__arrow ▼
+
+        .flowOverview__item 4.ベルトを選ぶ
+        .flowOverview__arrow ▼
+
+        .flowOverview__item  5.完成
+
+
+      form
+        table.flowTitle
+          tr
+            td.flowTitle__item.--title 
+              h2.n 1.材質を選ぶ 
+            td.flowTitle__item.--after 2
+            td.flowTitle__item.--after 3
+            td.flowTitle__item.--after 4
+            td.flowTitle__item.--after 5
+
+        
+        .optionSelector.--column-3
+          .optionSelector__item
+            .thumbnailBox
+              h3.thumbnailBox__title 桜
+              p.thumbnailBox__exp 文字くっきり
+              img.thumbnailBox__image(src="<?= get_stylesheet_directory_uri()?>/images/nametag_material_sakura.png")
+              .thumbnailBox__price 2000円
+
+          .optionSelector__item
+            .thumbnailBox
+              h3.thumbnailBox__title 紫檀
+
+              p.thumbnailBox__exp 渋さと文字の両立
+              img.thumbnailBox__image(src="<?= get_stylesheet_directory_uri()?>/images/nametag_material_shitan.png")
+              .thumbnailBox__price 3000円
+
+          .optionSelector__item
+            .thumbnailBox
+              h3.thumbnailBox__title 黒檀
+              p.thumbnailBox__exp とことん粋な渋さ
+              img.thumbnailBox__image(src="<?= get_stylesheet_directory_uri()?>/images/nametag_material_kokutan.png")
+
+              .thumbnailBox__price 4000円
+
+
+
+
+
+        table.flowTitle
+          tr
+            td.flowTitle__item.--before 1
+            td.flowTitle__item.--title 
+              h2.n 2.裏面を選ぶ
+            td.flowTitle__item.--after 3
+            td.flowTitle__item.--after 4
+            td.flowTitle__item.--after 5
+
+
+
+        .optionSelector.--column-2
+          .optionSelector__item
+            .thumbnailBox
+              h3.thumbnailBox__title 裏面なし
+              p.thumbnailBox__exp 
+              img.thumbnailBox__image(src="<?= get_stylesheet_directory_uri()?>/images/nametag_uranashi.png")
+              .thumbnailBox__price &nbsp;
+
+          .optionSelector__item
+            .thumbnailBox
+              h3.thumbnailBox__title 裏面あり
+              p.thumbnailBox__exp 
+              img.thumbnailBox__image(src="<?= get_stylesheet_directory_uri()?>/images/nametag_uraari.png")
+ 
+
+              .thumbnailBox__price +1000円
+        
+
+
+
+
+        table.flowTitle
+          tr
+            td.flowTitle__item.--before 1
+            td.flowTitle__item.--before 2 
+            td.flowTitle__item.--title
+              h2.n 3.文字を決める
+            td.flowTitle__item.--after 4
+            td.flowTitle__item.--after 5
+
+
+        h3 表面文字（6文字まで）
+        input(type="text" name="text_omote")
+
+
+        h3 裏面文字
+        p
+          | 文字数が多い場合は２行または３行にアレンジしてお入れいたします。 
+          br
+          | その場合、事前に校正画像を送ります。
+          br
+          | （裏面文字入れ例:第77回　富士見会ゴルフコンペ・平成27年　東京商会　社長杯・銀座高校OB杯　など）
+
+
+        input(type="text" name="text_ura")
+
+
+
+
+        table.flowTitle
+          tr
+            td.flowTitle__item.--before 1
+            td.flowTitle__item.--before 2 
+            td.flowTitle__item.--before 3 
+            td.flowTitle__item.--title
+              h2.n 4.ベルトを選ぶ
+            td.flowTitle__item.--after 5
+
+
+        .optionSelector.--column-2
+
+          .optionSelector__item
+            .thumbnailBox
+              h3.thumbnailBox__title 黒
+              img.thumbnailBox__image(src="<?= get_stylesheet_directory_uri()?>/images/nametag_belt_black.png")
+ 
+
+          .optionSelector__item
+            .thumbnailBox
+              h3.thumbnailBox__title 白
+              img.thumbnailBox__image(src="<?= get_stylesheet_directory_uri()?>/images/nametag_belt_white.png")
+ 
+
+
+
+
+        table.flowTitle
+          tr
+            td.flowTitle__item.--before 1
+            td.flowTitle__item.--before 2 
+            td.flowTitle__item.--before 3 
+            td.flowTitle__item.--before 4
+            td.flowTitle__item.--title 5
+              h2.n 5.完成
+
+
+        p
+          | おめでとうございます！
+          br
+          | あなただけのネームタグのデザインが完成しました！
+        p
+          | 下記の「カートに入れる」ボタンで、いったん商品をカートに入れて、ほかの商品を続けて選ぶことができます。
+          br
+          | 「カートに入れてご注文」ボタンで、お買い物を終了しすぐに商品をご注文できます。
+              
+        button(type="submit" name = "submit" value="go_cart") カートに入れる
+        button(type="submit" name = "submit" value="go_cart") すぐに注文
+
+      
+
+block sidebar
+  include ./includes/sidebar
+
+

@@ -1,0 +1,43 @@
+
+.thumbnailBox{
+  background:white;
+
+  box-shadow:black 1px 1px 3px;
+
+  border-radius:3px;
+
+  text-align:center;
+}
+
+.slick-current .thumbnailBox{
+  border:black 3px solid;
+  transform:scale(1.05);
+}
+
+
+.thumbnailBox__title {
+  @extend .n;
+
+  font-family:serif;
+  font-size:50px;
+  
+}
+.thumbnailBox__exp{
+
+}
+
+.thumbnailBox__image{
+  margin:0 auto;
+
+  width:172px;
+
+
+}
+
+
+.thumbnailBox__price{
+  font-size:32px;
+
+  color:red;
+}
+

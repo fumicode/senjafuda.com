@@ -1,13 +1,10 @@
 ///////////////////////// Basic Settings /////////////////////////////
 
 .contentLayout{
-
   @include grid-container;
   @include grid-collapse;
 
   margin-bottom:$base-spacing;
-
-
 }
 
 .contentLayout__main{
@@ -26,11 +23,16 @@
   margin-bottom:$base-spacing;
 }
 
+.contentLayout__content{
+  margin-bottom:$base-spacing;
+}
 
 
 ///////////////////////// mainSub layout /////////////////////////////
 
 .contentLayout.--mainSub{
+
+  @include grid-collapse;
 
   .contentLayout__main{
     @include grid-column(12);
@@ -81,11 +83,16 @@
   }
 }
 
-///////////////////////// 2-column layout /////////////////////////////
+///////////////////////// 1-column layout /////////////////////////////
 
 .contentLayout.--column-1{
   .contentLayout__content{
     @include grid-column(12);
+
+    &.--noBottomSpace{
+      padding-bottom:0;
+      margin-bottom:0;
+    }
   }
 }
 

@@ -40,6 +40,19 @@ $custom-neat-grid: (
   }
 }
 
+.cardLists.--column-2 .cardLists__card{
+  @include grid-column(6);
+
+	&:nth-child(2n+1){
+    clear:left;
+  }
+
+  &:nth-child(3n+1){
+    clear:none;
+  }
+
+}
+
 .cardLists.--column-1 .cardLists__card{
   @include grid-column(12);
 }

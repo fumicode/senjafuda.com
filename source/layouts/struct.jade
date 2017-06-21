@@ -1,0 +1,44 @@
+doctype html
+html
+  head
+    title= 千社札.com
+
+
+    meta(name="viewport", content="width=device-width,initial-scale=1")
+
+    :php
+      wp_enqueue_style('style', get_stylesheet_uri(), array(), time() );
+
+
+
+
+    block head_end
+
+    - wp_head();
+
+  body
+    //Facebook App
+    script.
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1704903029814324',
+          xfbml      : true,
+          version    : 'v2.9'
+        });
+        FB.AppEvents.logPageView();
+      };
+
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+    block body_begin
+    block page
+    block body_end
+
+
+    - wp_footer();

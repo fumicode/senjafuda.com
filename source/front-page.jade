@@ -31,7 +31,7 @@ block body_end
 block content
   include ./includes/mixin_card
   .contentLayout.--column-1
-    .contentLayout__content
+    .contentLayout__content.--noBottomSpace
       #homeSlider.homeSlider
         .homeSlider__slide
           a.homeSlider__link(href="")
@@ -40,6 +40,11 @@ block content
         .homeSlider__slide
           a.homeSlider__link(href="")
             img.homeSlider__image(src="<?= get_stylesheet_directory_uri() ?>/images/slider_slide_2.jpg")
+
+        .homeSlider__slide
+          a.homeSlider__link(href="")
+            img.homeSlider__image(src="<?= get_stylesheet_directory_uri() ?>/images/slider_slide_3.jpg")
+
 
     //
       .contentLayout__sub
@@ -55,8 +60,9 @@ block content
   .contentLayout.--column-1
     .contentLayout__content
       div.contentBox.--green
-        div.contentBox__title
-          h2 当店の人気商品
+        //
+          div.contentBox__title
+            h2 当店の人気商品
 
 
         div.contentBox__content
@@ -80,15 +86,15 @@ block content
             - endwhile;
       
 
-  .contentLayout.--column-2
+  .contentLayout.--mainSub
 
-    .contentLayout__left
+    .contentLayout__main
       .contentBox.--red
         .contentBox__title
           h2 ご購入事例の紹介
 
         .contentBox__content
-          div.cardLists.--red.--column-1
+          div.cardLists.--red.--column-2
             :php
               $parent_id = get_page_by_path('examples')->ID;              
               $args = array( 
@@ -113,44 +119,26 @@ block content
                 
             - endwhile;
 
-    .contentLayout__right
+    .contentLayout__sub
       div.contentBox.--blue
         div.contentBox__title
           h2 新着情報・メディア掲載
 
-        .newsLists
+        .newsLists.contentBox__cancelPadding
           - while(have_posts()): the_post()
           div.newsLists__newsBox
             div.newsBox
-              div.newsBox__img
-                - $categories = get_the_category();
-                :php
-                  foreach ($categories as $item){
-                    if( $item->name == 'tv' || $item->name == 'media'){
-                      $category = $item->name;
-                    }
-                  }
-                  $news_img_path = get_stylesheet_directory_uri() . "/images/news_cat_" . $category . ".jpg";
-                img(src="<?= $news_img_path ?>")
-              div.newsBox__title <?= the_content(); ?>
+              div.newsBox__content <?= the_content(); ?>
           - endwhile;
-      
 
   div.contentBox
     .contentBox__title
-      h2  毎日更新！FaceBookやってます！
-    div.contentBox__images
-
-      div.images
-        div.image
-          img(src="https://placehold.jp/500x300.png")
-        div.image
-          img(src="https://placehold.jp/500x300.png")
+      h2.align_center  毎日更新！FaceBookやってます！
     p.contentBox__desc--full Facebookに、お店に来てくださった外国人のお客様の写真をアップしております。
+    <div class="fb-page" data-href="https://www.facebook.com/senjafuda/" data-tabs="timeline" data-width="300" data-height="600" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/senjafuda/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/senjafuda/">千社札 senjafuda Japan Souvenir</a></blockquote></div>
+
+
+
+    
     div.contentBox__button
       a(href="https://www.facebook.com/senjafuda") Facebook/senjafuda
-    
-
-    
-
-  

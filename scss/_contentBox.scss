@@ -10,8 +10,6 @@
   }
 
 
-  padding: $x-small-spacing;
-
   &.--blue {
     background: $senja-blue;
   }
@@ -80,6 +78,17 @@
 }
 
 
+.contentBox__cancelPadding{
+
+  margin-left: -$x-small-spacing;
+  margin-right: -$x-small-spacing;
+	
+	@include grid-media($grid-setting-large){
+		margin-left: -$small-spacing;
+		margin-right: -$small-spacing;
+  }
+}
+
 .contentBox__button {
     background: #475689;
     margin: 10px 20px;
@@ -93,3 +102,5 @@
     text-decoration:none;
     font-size:20px;
 }
+
+

@@ -1,31 +1,12 @@
-doctype html
-html
-  head
-    title= 千社札.com
+extends struct
 
+block page
+  div.page
+    div.page__header
+      block head
+    div.page__content
+      block content
 
-    meta(name="viewport", content="width=device-width,initial-scale=1")
+    div.page__footer
+      block foot
 
-    :php
-      wp_enqueue_style('style', get_stylesheet_uri(), array(), time() );
-
-
-
-
-    block head_end
-
-    - wp_head();
-
-  body
-    div.page
-      div.page__header
-        block head
-      div.page__content
-        block content
-
-      div.page__footer
-        block foot
-
-    block body_end
-
-    - wp_footer();

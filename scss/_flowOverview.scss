@@ -1,0 +1,26 @@
+
+.flowOverview{
+  border: solid green 3px;
+
+  background:white;
+
+  padding:$x-small-spacing;
+
+  margin-bottom:1em;
+}
+
+
+.flowOverview__item{
+
+  padding:$x-small-spacing;
+
+  background:green;
+  color:white;
+  font-weight:bold;
+
+}
+
+.flowOverview__arrow{
+  text-align:center;
+  color: gray;
+}

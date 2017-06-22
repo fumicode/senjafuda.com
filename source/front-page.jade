@@ -9,25 +9,20 @@ block foot
 
 
 block head_end
-
   - wp_enqueue_script("jquery")
   - wp_enqueue_script("slick", '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js')
   - wp_enqueue_style("slickcss", '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css')
 
-
 block body_end
   script.
-
     jQuery(function(){
       jQuery('#homeSlider').slick({
         autoplay:true,
         autoplaySpeed:4000 //4秒
       });
-
-
     });
 
-  
+
 block content
   include ./includes/mixin_card
   .contentLayout.--column-1

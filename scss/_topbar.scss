@@ -31,15 +31,7 @@
 
 
 .topbar__otherLangs{
-
-  display:none;
-
-  @include grid-media($grid-setting-large){
-    display:block;
-
-    @include grid-column(4, $grid-setting-nogutter);
-    
-  }
+  @include grid-column(3, $grid-setting-nogutter);
 
 }
 
@@ -50,11 +42,11 @@
 
   text-align:right;
 
-  @include grid-column(6, $grid-setting-nogutter);
+  @include grid-column(3, $grid-setting-nogutter);
 
 
   @include grid-media($grid-setting-large){
-    @include grid-column(2, $grid-setting-nogutter);
+    @include grid-column(3, $grid-setting-nogutter);
   }
 }
 

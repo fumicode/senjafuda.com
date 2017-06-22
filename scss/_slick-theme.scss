@@ -103,11 +103,14 @@
 
 .slick-prev
 {
-    left: 0px;
+    left: -30px;
+
+		background: url(images/slider_prev.png);
+		background-size: 30px 30px;
 }
 [dir='rtl'] .slick-prev
 {
-    right: -0;
+    right: -30px;
     left: auto;
 }
 .slick-prev:before
@@ -121,12 +124,15 @@
 
 .slick-next
 {
-    right: -0;
+    right: -30px;
+
+		background: url(images/slider_next.png);
+		background-size: 30px 30px;
 }
 [dir='rtl'] .slick-next
 {
     right: auto;
-    left: -0;
+    left: -30px;
 }
 .slick-next:before
 {

@@ -1,5 +1,3 @@
-
-
 .otherLangs{
 
   @include grid-container;
@@ -17,15 +15,13 @@
   &.--on-topbarInside{
     height:$topbar-content-height;
 
-    
-    
   }
-
 }
 
 .otherLangs__item{
 
-  @include grid-column(4);
+  float:right;
+  @include grid-column(12);
 
   
 
@@ -46,5 +42,8 @@
 }
 
 .otherLangs__image{
-  vertical-align:middle;
+  vertical-align:bottom;
+
+  max-height:$topbar-content-height;
+
 }

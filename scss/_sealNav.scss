@@ -1,0 +1,32 @@
+.sealNav{
+  @include grid-container;
+  @include grid-collapse;
+}
+
+
+.sealNav__buttonContainer{
+  @include grid-column(6);
+}
+
+.sealNav__button{
+  display:block;
+  background: $senja-blue;
+  padding:1rem;
+  border-radius:$base-border-radius;
+
+  color:white;
+
+  &:hover{
+    color:white;
+  }
+
+  &.--prev{
+    text-align:left;
+  }
+
+  &.--next{
+    text-align:right;
+  }
+
+}
+

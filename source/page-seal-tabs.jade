@@ -1,0 +1,123 @@
+extends layouts/2column-layout
+
+block head
+  include ./includes/head
+
+
+block foot
+  include ./includes/foot
+
+
+block head_end
+
+  - wp_enqueue_script("jquery")
+  - wp_enqueue_script("slick", '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js')
+  - wp_enqueue_style("slickcss", '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css')
+
+
+block body_end
+  script.
+
+    jQuery(function(){
+      var sealList= jQuery('.sealList').slick({
+        //autoplay:true,
+        //autoplaySpeed:4000, //4秒
+        slidesToShow:1,
+        slidesToScroll:1,
+        arrows:false,
+        asNavFor: '.sealTabList'
+      });
+
+      var sealTabList = jQuery('.sealTabList').slick({
+        autoplay:true,
+        autoplaySpeed:4000, //4秒
+        slidesToShow: <?= $sealNum/$tabNum ?>,
+        //slidesToScroll:<?= $sealNum/$tabNum ?>,
+        focusOnSelect: true,
+
+        asNavFor: '.sealList'
+      });
+
+      jQuery('.sealNav__button.--prev').click(function(){
+        var ret = sealList.slick('slickPrev');
+      });
+
+      jQuery('.sealNav__button.--next').click(function(){
+        var ret = sealList.slick('slickNext');
+      });
+
+    });
+
+
+block content
+  .contentBox.--green
+    .articleContent
+      h1 シール一覧
+
+      - $sealNum = 200;
+      - $tabNum = 50;
+      - $groupNum = 5;
+      - $seal_id = 1;
+
+
+      div.sealNav
+        div.sealNav__buttonContainer
+          a.sealNav__button.--prev 前のタブへ
+        div.sealNav__buttonContainer
+          a.sealNav__button.--next 次のタブへ
+
+      #sealTabList.sealTabList
+        - for($tab_i = 0; $tab_i < $sealNum/$tabNum; $tab_i++):
+          - $seal_id_prev = $tab_i * $tabNum + 1; 
+          - $seal_id_next = $seal_id_prev + $tabNum;
+
+          .sealTabList__tab
+            - echo $seal_id_prev . ' - ' .  $seal_id_next
+        - endfor;
+
+      ul#sealList.sealList
+        - for($tab_i = 0; $tab_i < $sealNum/$tabNum; $tab_i++):
+          li.sealList__tab
+            - for($group_i = 0; $group_i < $tabNum/$groupNum; $group_i++):
+              table.sealGroup
+                tr
+                  td(colspan="5").sealGroup__description このシールグループについての説明
+                tr 
+                  - for($seal_i = 1 ; $seal_i <= $groupNum; $seal_i++):
+                    td.sealGroup__item
+
+                      img.sealGroup__image(src="<?= get_stylesheet_directory_uri()?>/images/seals/<?= $seal_id ?>.jpg")
+                      .sealGroup__number
+                        - echo $seal_id;
+                    - $seal_id ++;
+                  - endfor;
+            - endfor;
+        -endfor;
+
+
+      #sealTabList.sealTabList
+        - for($tab_i = 0; $tab_i < $sealNum/$tabNum; $tab_i++):
+          - $seal_id_prev = $tab_i * $tabNum + 1; 
+          - $seal_id_next = $seal_id_prev + $tabNum;
+
+          .sealTabList__tab
+            - echo $seal_id_prev . ' - ' .  $seal_id_next
+        - endfor;
+
+      div.sealNav
+        div.sealNav__buttonContainer
+          a.sealNav__button.--prev 前のタブへ
+        div.sealNav__buttonContainer
+          a.sealNav__button.--next 次のタブへ
+
+      
+
+      p(style="text-align:center;font-size:32px;")
+        strong 
+          a.button(href="/seal/seal-all") すべて一気に並べて見る
+
+      
+block sidebar
+  include ./includes/sidebar
+
+

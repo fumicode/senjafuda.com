@@ -1,21 +1,21 @@
-extends layouts/2column-layout
+extends layouts/basic-layout
 
 block head
   include ./includes/head
 
+
 block foot
   include ./includes/foot
-
 
 block content
   .contentBox.--green
     .articleContent
-      h1 千社札シール
+      h1 シール一覧
 
-      h3 人気の千社札シール
-      - $sealNum = 16;
-      - $tabNum = 16;
-      - $groupNum = 8;
+      
+      - $sealNum = 200;
+      - $tabNum = 50;
+      - $groupNum = 10;
       - $seal_id = 1;
 
 
@@ -24,6 +24,8 @@ block content
           li.sealList__tab
             - for($group_i = 0; $group_i < $tabNum/$groupNum; $group_i++):
               table.sealGroup
+                tr
+                  td(colspan="5").sealGroup__description このシールグループについての説明
                 tr 
                   - for($seal_i = 1 ; $seal_i <= $groupNum; $seal_i++):
                     td.sealGroup__item
@@ -36,21 +38,12 @@ block content
             - endfor;
         -endfor;
 
-
       p(style="text-align:center;font-size:32px;")
         strong 
-          a.button(href="/seal/seal-tabs") すべてのデザインを見る
-      
-      - if(is_404()):
+          a.button(href="./seal") 千社札シールトップに戻る
 
-        h1(style="text-align:center;") ページが見つかりません
-        p(style="text-align:center;") 申し訳ありません。お探しのページが見つかりません。
-
-      - else:
-        - while(have_posts()): the_post()
-          - the_content(); 
-        - endwhile;
-      - endif;
       
 block sidebar
   include ./includes/sidebar
+
+

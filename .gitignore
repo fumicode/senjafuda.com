@@ -16,3 +16,6 @@ editor.css.map
 
 *.swp
 *.swo
+
+dest/
+
